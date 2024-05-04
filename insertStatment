@@ -1,0 +1,13 @@
+private void button1_Click(object sender, EventArgs e)
+{
+    string connstring = "Data Source = DESKTOP-0AO2L8L;Initial Catalog = DB1;Integrated Security= true";
+    SqlConnection con = new SqlConnection(connstring);
+    con.Open();
+    string text = textBox1.Text;
+    string query1 = "insert into Student (id,name) values(@value1, @value2)";
+    SqlCommand cmd1 = new SqlCommand(query1, con);
+    cmd1.Parameters.AddWithValue("@value1", 5);
+    cmd1.Parameters.AddWithValue("@value2", text);
+    cmd1.ExecuteNonQuery();
+    
+}
