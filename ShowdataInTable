@@ -1,0 +1,10 @@
+private void button1_Click(object sender, EventArgs e)
+{
+        string connstring = "Data Source = DESKTOP-0AO2L8L;Initial Catalog = DB1;Integrated Security= true";
+        SqlConnection con = new SqlConnection(connstring);
+        con.Open();
+        SqlDataAdapter sqlDa = new SqlDataAdapter("select name,id from Student", con);
+        DataTable dtbl = new DataTable();
+        sqlDa.Fill(dtbl);
+        dgv1.DataSource = dtbl;
+}
