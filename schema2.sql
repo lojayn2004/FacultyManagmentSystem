@@ -47,7 +47,7 @@ foreign key (deptID) references department(deptID) ON DELETE NO ACTION ON UPDATE
 create table student(
 userID int primary key ,
 deptID int ,
-gpa decimal null,
+gpa float null,
 graduation_year int not null,
 total_credit_hours int not null DEFAULT 0,
 foreign key (deptID) references department(deptID) ON DELETE CASCADE ON UPDATE CASCADE,
