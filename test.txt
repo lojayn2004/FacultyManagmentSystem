@@ -1,0 +1,9 @@
+- Department:
+    - Adding: Ok
+    - Deleting:
+             1) Error Because it is refrencing other table
+             2) Must Check if he Enters a valid name and pop a msg instead
+- Course:
+    - Adding: Ok, But When not supplying a professor Id Error Appears
+    - Edit:
+    - Delete:
