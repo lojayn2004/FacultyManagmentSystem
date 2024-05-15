@@ -116,3 +116,5 @@ VALUES ('CS301', 'Software Engineering',  4, 'Building C Room 305', 350, 'This c
 
 alter table student 
 alter column graduation_year int null;
+alter table professor
+alter column position varchar(200) null;
