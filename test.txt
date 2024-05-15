@@ -6,4 +6,18 @@
 - Course:
     - Adding: Ok, But When not supplying a professor Id Error Appears
     - Edit:
-    - Delete:
+    - Delete: 1) Ok when no one is refrencing it
+              2) 
+
+- Sign Up:
+    -  Adding new Student: Worked Ok
+    -  Adding new Professor: Worked Wrong There is no position
+    -  Adding new Admin: Worked Successfully
+
+- Enrollment
+    -  Assign Student to Department: Ok worked
+    -  Enroll Student Into Course: Done Successfully but when leaving grade empty error appears & Changes Are not updated in the grid 
+    -  Gpa got updated normally
+    -  Credit Hours not updated ===>
+
+ 
