@@ -3,6 +3,7 @@
     - Deleting:
              1) Error Because it is refrencing other table
              2) Must Check if he Enters a valid name and pop a msg instead
+    ===> Tried it now and it worked
 - Course:
     - Adding: Ok, But When not supplying a professor Id Error Appears
     - Edit:
@@ -11,7 +12,7 @@
 
 - Sign Up:
     -  Adding new Student: Worked Ok
-    -  Adding new Professor: Worked Wrong There is no position
+    -  Adding new Professor: Worked Wrong There is no position ---> Worked After Altering table to not null
     -  Adding new Admin: Worked Successfully
 
 - Enrollment
@@ -19,5 +20,9 @@
     -  Enroll Student Into Course: Done Successfully but when leaving grade empty error appears & Changes Are not updated in the grid 
     -  Gpa got updated normally
     -  Credit Hours not updated ===>
+
+- Professor Position must be altered to allow null 
+- Student Profile Worked Fine 
+- Prerequisite
 
  
