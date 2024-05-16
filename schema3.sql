@@ -25,7 +25,7 @@ userID int primary key ,
 deptID int ,
 position varchar(200)  null ,
 foreign key (userID) references users(userID) ON DELETE CASCADE ON UPDATE CASCADE ,
-foreign key (deptID) references department(deptID) ON DELETE CASCADE ON UPDATE CASCADE 
+foreign key (deptID) references department(deptID) ON DELETE SET NULL ON UPDATE CASCADE 
 );
 
 -- COURSE TABLE
@@ -40,7 +40,7 @@ descriptions text not null ,
 userID int,
 deptID int ,
 foreign key (userID) references professor(userID) ON DELETE CASCADE ON UPDATE CASCADE ,
-foreign key (deptID) references department(deptID) ON DELETE CASCADE ON UPDATE CASCADE,
+foreign key (deptID) references department(deptID) ON DELETE SET NULL ON UPDATE CASCADE,
 );
 
 -- Student Table
@@ -50,7 +50,7 @@ deptID int ,
 gpa float null,
 graduation_year int  null,
 total_credit_hours int not null DEFAULT 0,
-foreign key (deptID) references department(deptID) ON DELETE CASCADE ON UPDATE CASCADE,
+foreign key (deptID) references department(deptID) ON DELETE SET NULL ON UPDATE CASCADE,
 foreign key (userID) references users(userID) ON DELETE CASCADE ON UPDATE CASCADE ,
 );
 
