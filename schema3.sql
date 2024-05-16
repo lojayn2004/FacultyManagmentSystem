@@ -23,7 +23,7 @@ deptName varchar(200) not null
 create table professor(
 userID int primary key ,
 deptID int ,
-position varchar(200) not null ,
+position varchar(200)  null ,
 foreign key (userID) references users(userID) ON DELETE CASCADE ON UPDATE CASCADE ,
 foreign key (deptID) references department(deptID) ON DELETE CASCADE ON UPDATE CASCADE 
 );
@@ -40,7 +40,7 @@ descriptions text not null ,
 userID int,
 deptID int ,
 foreign key (userID) references professor(userID) ON DELETE CASCADE ON UPDATE CASCADE ,
-foreign key (deptID) references department(deptID) ON DELETE NO ACTION ON UPDATE NO ACTION,
+foreign key (deptID) references department(deptID) ON DELETE CASCADE ON UPDATE CASCADE,
 );
 
 -- Student Table
@@ -48,7 +48,7 @@ create table student(
 userID int primary key ,
 deptID int ,
 gpa float null,
-graduation_year int not null,
+graduation_year int  null,
 total_credit_hours int not null DEFAULT 0,
 foreign key (deptID) references department(deptID) ON DELETE CASCADE ON UPDATE CASCADE,
 foreign key (userID) references users(userID) ON DELETE CASCADE ON UPDATE CASCADE ,
@@ -59,12 +59,12 @@ foreign key (userID) references users(userID) ON DELETE CASCADE ON UPDATE CASCAD
 create table enrollment(
 userID int ,
 course_code varchar(100) ,
-grade int not null,
-years int not null,
-semester varchar(200) not null,
+grade int  null,
+years int  null,
+semester varchar(200)  null,
 primary key(userID,course_code),
 foreign key (course_code) references course(course_code) ON DELETE CASCADE ON UPDATE CASCADE ,
-
+foreign key (userID) references student(userID) ON DELETE CASCADE ON UPDATE CASCADE,
 );
 
 -- prequisite table
@@ -73,16 +73,8 @@ pre_course_code varchar(100),
 course_code varchar(100),
 primary key (pre_course_code,course_code),
 foreign key (course_code) references course(course_code) ON DELETE CASCADE ON UPDATE CASCADE ,
+foreign key (pre_course_code) references course (course_code) ON DELETE CASCADE ON UPDATE CASCADE,
 );
-
--- enrollment table
-ALTER TABLE enrollment
-ADD CONSTRAINT FK_enrollment_userID
-FOREIGN KEY (userID)
-REFERENCES users (userID)
-ON DELETE NO ACTION
-ON UPDATE NO ACTION;
-
 
 INSERT INTO department (deptName) VALUES ( 'Computer Science');
 INSERT INTO department (deptName) VALUES ('Information System');
