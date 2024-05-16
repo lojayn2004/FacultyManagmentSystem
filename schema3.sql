@@ -106,7 +106,3 @@ VALUES ('CS201', 'Data Structures and Algorithms',  4, 'Building B Room 203', 40
 INSERT INTO course (course_code, course_name, credit_hours, locations, capacity, descriptions, userID, deptID)
 VALUES ('CS301', 'Software Engineering',  4, 'Building C Room 305', 350, 'This course focuses on software engineering principles and practices.', 5, 1);
 
-alter table student 
-alter column graduation_year int null;
-alter table professor
-alter column position varchar(200) null;
