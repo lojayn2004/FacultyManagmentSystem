@@ -1,0 +1,38 @@
+create table users(userID int identity(1,1) primary key,firstName varchar(50) not null,
+lastName varchar(50)not null,email varchar(50) not null,phone varchar(50)not null,userPassword varchar(50) not null,
+gender varchar(50) not null,userType varchar(50) not null,birthDate int not null);
+
+-- DEPARTMENT TABLE
+create table department (
+    deptID int primary key identity(1, 1),    deptName varchar(200) not null
+);
+-- PROFESSOR TABLE
+create table professor (
+    userID int primary key,    position varchar(200) null,
+    foreign key (userID) references users(userID) ON DELETE CASCADE ON UPDATE CASCADE);
+-- COURSE TABLE
+create table course (    course_code varchar(100) primary key,
+    course_name varchar(200) not null,    credit_hours int not null,
+    locations varchar(200) not null,    capacity int not null,
+    descriptions text not null,    userID int,
+    deptID int,    foreign key (userID) references professor(userID) ON DELETE SET NULL ON UPDATE CASCADE,
+    foreign key (deptID) references department(deptID) ON DELETE SET NULL ON UPDATE CASCADE);
+-- STUDENT TABLE
+create table student (    userID int primary key,
+    deptID int,    gpa float null,
+    graduation_year int null,    total_credit_hours int not null DEFAULT 0,
+    foreign key (deptID) references department(deptID) ON DELETE SET NULL ON UPDATE CASCADE,    foreign key (userID) references users(userID) ON DELETE CASCADE ON UPDATE CASCADE
+);
+-- ENROLLMENT TABLE
+create table enrollment (
+    userID int,    course_code varchar(100),
+    grade int null,    years int null,
+    semester varchar(200) null,    primary key (userID, course_code),
+    foreign key (course_code) references course(course_code)  ,    foreign key (userID) references student(userID) 
+);
+-- PREREQUISITE TABLE
+create table prerequisite (
+    pre_course_code varchar(100),
+    course_code varchar(100),    primary key (pre_course_code, course_code),
+    foreign key (course_code) references course(course_code) ,    foreign key (pre_course_code) references course (course_code)  
+);
