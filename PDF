@@ -2,20 +2,31 @@
 1) signup
 2) Add course
 3) Add prerequiste
-4) Department
+4) Add Department
 5) Assign to department
-6) Enroll in course // Not Finished
+6) Enroll in course 
+7) insert student 
 
 // Delete Statments
 1) deleting prerequiste 
-2) deleting Course
-3) delete department
+2) deleting Course with condition 
+3) delete department condition 
 
 // Update Statments
-1) update course
+1) update course with condition 
+2) update credit hours with condition 
+3) update gpa with condition 
+4) update student profile with condition 
 
 // Select Statments
 1) log in
+2) show courses 
+3) No of student in department and courses
 
-// Se
-2) 
+
+// Select join 
+1) Enrollment in course 
+2) between course and enrollment 
+3) show one or more criteria 
+
+
